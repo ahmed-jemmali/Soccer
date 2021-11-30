@@ -1,0 +1,43 @@
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="d-flex team-vs">
+                <span class="score">
+                    <span [ngStyle]="{color : color(child.scoreOne,child.scoreTwo)[0]}">{{child.scoreOne}}</span> -
+                    <span [ngStyle]='{color : color(child.scoreTwo,child.scoreOne)[0]}'>{{child.scoreTwo}}</span>
+                </span>
+                <div class="team-1 w-50">
+                    <div class="team-details w-100 text-center">
+                        <img src="assets/images/logo_1.png" alt="Image" class="img-fluid">
+                        <h3>
+                            <span [ngClass]='{
+                                    yellow : color(child.scoreOne,child.scoreTwo)[0] == "yellow",
+                                    green : color(child.scoreOne,child.scoreTwo)[0] == "green",
+                                    blue : color(child.scoreOne,child.scoreTwo)[0] == "blue"}' >
+                                {{child.teamOne}}</span>
+                            <span> ({{color(child.scoreOne,child.scoreTwo)[1]}})</span>
+                        </h3>
+
+                    </div>
+                </div>
+                <div class="team-2 w-50">
+                    <div class="team-details w-100 text-center">
+                        <img src="assets/images/logo_2.png" alt="Image" class="img-fluid">
+                        <h3>
+                            <span [ngClass]='{
+                                yellow : color(child.scoreTwo,child.scoreOne)[0] == "yellow",
+                                green : color(child.scoreTwo,child.scoreOne)[0] == "green",
+                                blue : color(child.scoreTwo,child.scoreOne)[0] == "blue" }'>
+                                {{child.teamTwo}}</span>
+                            <span> ({{color(child.scoreTwo,child.scoreOne)[1]}})</span>
+                        </h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

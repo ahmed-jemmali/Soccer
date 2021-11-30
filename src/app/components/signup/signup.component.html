@@ -1,0 +1,109 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">Signup</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">Signup</h3>
+                <form action="#" class="p-5 bg-light" [formGroup]='signupForm'>
+
+
+                    <div class="form-group">
+                        <label for="name">FirstName *</label>
+                        <input type="text" class="form-control" id="name" formControlName='firstName' required>
+                    </div>
+                    <div *ngIf='signupForm.controls["firstName"].invalid
+                        &&(signupForm.controls["firstName"].dirty ||
+                        signupForm.controls["firstName"].touched)'>
+                        <div *ngIf='signupForm.controls["firstName"].errors.required' style="color: red;">
+                            First Name is required
+                        </div>
+                        <div *ngIf='signupForm.controls["firstName"].errors.minlength' style="color: red;">
+                            First Name must have at least 4 character
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="name">LastName *</label>
+                        <input type="text" class="form-control" id="name" formControlName='lastName' required>
+                    </div>
+                    <div *ngIf='signupForm.controls["firstName"].invalid
+                        &&(signupForm.controls["firstName"].dirty ||
+                        signupForm.controls["firstName"].touched)'>
+                        <div *ngIf='signupForm.controls["firstName"].errors.required' style="color: red;">
+                            Last Name is required
+                        </div>
+                        <div *ngIf='signupForm.controls["firstName"].errors.minlength' style="color: red;">
+                            Last Name must have at least 4 character
+                        </div>
+                    </div>
+                    
+
+
+
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" class="form-control" id="email" formControlName='email' required>
+                    </div>
+                    <div *ngIf='signupForm.controls["email"].invalid
+                        &&(signupForm.controls["email"].dirty ||
+                        signupForm.controls["email"].touched)'>
+                        <div *ngIf='signupForm.controls["email"].errors.required' style="color: red;">
+                            Email is required
+                        </div>
+                        <div *ngIf='signupForm.controls["email"].errors.email' style="color: red;">
+                            Email must end with @ gmail.com
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label for="pass">Password* (8 characters minimum):</label>
+                        <input type="password" id="pass" name="password" minlength="8" formControlName='pwd' required>
+                    </div>
+                    <div *ngIf='signupForm.controls["pwd"].invalid
+                        &&(signupForm.controls["pwd"].dirty ||
+                        signupForm.controls["pwd"].touched)'>
+                        <div *ngIf='signupForm.controls["pwd"].errors.required' style="color: red;">
+                            Password is required
+                        </div>
+                        <div *ngIf='signupForm.controls["pwd"].errors.minlength' style="color: red;">
+                            Password must have at least 8 character
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label for="pass">ConfirmPassword* </label>
+                        <input type="password" id="pass" name="password" minlength="8" formControlName='confirmPwd' required>
+                    </div>
+                    <div *ngIf='signupForm.controls["confirmPwd"].invalid
+                        &&(signupForm.controls["confirmPwd"].dirty ||
+                        signupForm.controls["confirmPwd"].touched)'>
+                        <div *ngIf='signupForm.controls["confirmPwd"].errors.required' style="color: red;">
+                            Confirm Password is required
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <button type="submit"  value="Post Comment" (click)='signup()'
+                            class="btn btn-primary py-3 px-4 text-white">signup</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
